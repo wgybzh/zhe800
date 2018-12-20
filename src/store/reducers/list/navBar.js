@@ -3,7 +3,6 @@ const defaultState = {
         navList:[]
 } 
 export default (state = defaultState,action)=>{
-    console.log(action.type)
     // eslint-disable-next-line default-case
     switch(action.type){
         case "GET_DATA_FULFILLED":

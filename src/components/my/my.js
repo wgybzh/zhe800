@@ -1,8 +1,14 @@
 import React,{Component,Fragment} from "react";
 import "../../common/css/myCss/my.css"
 import MyList from "./myLogin/myList"
-export default class My extends Component{
+import MyIfLogin from "./myLogin/myIfLogin"
+import MyLoginNot from "./myLogin/myLoginNot"
+import {connect} from "react-redux"
+ class My extends Component{
     render(){
+       // let {flag} = this.props
+        let  flag = localStorage.getItem("flag")
+       // console.log(flag)
         return (
             <div className="myWarp">
                 <div className="myTop">
@@ -11,15 +17,23 @@ export default class My extends Component{
                     </a>
                     <div className="myBtnWrap"> 
                         <span>个人中心</span> 
-                        <p className="myBtn">
-                            <a href="#/mylogin/myLoginLetter">登录</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-                            <a href="#/mylogin/myLoginLetter">注册</a>
-                        </p>
+                        
+                        {
+                            flag? <MyIfLogin/>:<MyLoginNot/>
+                        }
+                       
                     </div>
-                  
                 </div>
                  <MyList />
             </div>
         )
     }
 }
+
+const mapStateToProps = (state)=>({
+    flag:state.myJudgeLogin.flag
+})
+const mapDispatchToProps = (dispatch)=>({
+
+})
+export default connect(mapStateToProps,mapDispatchToProps)(My)

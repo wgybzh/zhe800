@@ -25,6 +25,17 @@
    
     text-align: center;
 }
+.myLoginOk{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 .3rem
+}
+.myLoginOk>p{
+    float: left;
+}
+.myLoginOk>i{
+    float: right
+}
 .myBtn{
     width: 2.94rem;
     height: .74rem;

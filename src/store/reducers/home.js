@@ -3,7 +3,7 @@ const defaultState = {
 }
 
 export default (state=defaultState,action)=>{
-    console.log(action.type)
+   // console.log(action.type)
     switch(action.type){
         case "DEALLIST_FULFILLED":
         let homeDealListState = JSON.parse(JSON.stringify(state));

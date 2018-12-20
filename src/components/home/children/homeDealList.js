@@ -4,7 +4,6 @@ export default class HomeDealList extends Component{
     
     render(){
         let {dealList} = this.props;
-        console.log(dealList)
         return(
             <div className="home_deal_box">
                     <div className="home_deal_list">
@@ -17,7 +16,7 @@ export default class HomeDealList extends Component{
                                         </div>
                                         <div className="goods_info">
                                             <div className="title"></div>
-                                            <div className></div>
+                                            <div></div>
                                         </div>
                                     </a>
                         }):"正在加载"
