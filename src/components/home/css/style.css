@@ -1,0 +1,156 @@
+.homeHeader{
+    width: 100%;
+    height: 1.31rem;
+    background: #fff;
+    box-sizing: border-box;
+    padding: .42667rem;
+    border-bottom: .02133rem solid #d9d9d9;
+    display: flex;
+    justify-content: space-between;
+
+}
+#img{
+    width: 100%;
+    height: 1.43rem;
+}
+#img>img{
+    display: block;
+    width: 100%;
+    height: 1.1rem;
+}
+
+/*搜索*/
+
+.ser_warp{
+    width: 100%;
+    height: .91rem;
+    border-bottom: 0.01rem solid #d9d9d9;
+    background-color: #fff;
+    text-align: center;
+    padding: .2rem;
+    display: flex;
+    justify-content:space-between;
+}
+.home_ser_800{
+    width: 1.43rem;
+    height: .5rem;
+}
+.home_ser_800>img{
+    float: left;
+}
+.home_ser_input{
+    width: 4.2rem;
+    height: .5rem;
+    background-color: #efeded;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .24rem;
+    color: #c1c1c1;
+    border-radius: .25rem;
+}
+.home_ser_category>i{
+    display: block;
+    width: 1.46rem;
+    line-height: .5rem;
+    font-size: .46rem;
+    font-weight: bold;
+    padding-left:.45rem;
+}
+
+/*nav*/
+
+.home_nav{
+    width: 100%;
+    height: .68rem;
+    border-bottom: 1px solid #aaa;
+}
+.home_nav_cont{
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+
+}
+.home_nav_cont .item{
+    display: inline-block;
+    height: .68rem;
+    vertical-align: top;
+}
+.home_nav_cont .item>a{
+    display: block;
+   
+    height: .68rem;
+    overflow: hidden;
+}
+.home_nav_cont .item>a>span{
+    display: block;
+    height: .69rem;
+    margin: 0 .28rem;
+    border-bottom: .04rem solid #fff;
+    line-height: .68rem;
+    font-size: 0.28rem;
+    
+        box-sizing: border-box;
+    
+}
+.home_nav_cont .item.on span{
+    color: #e30c26;
+    border-color: #e30c26;
+}
+.drop_down{
+    width: .75rem;
+    height: .68rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+.drop-down-bg>i{
+   font-size: .4rem;
+  
+}
+.drop_down:hover{
+    transform: rotateZ(-180deg)
+}
+
+.swiper-nav_wrap{
+    float: left;
+    overflow: hidden;
+    width: 75%;
+    height: .68rem;
+}
+
+.swiper-slide{
+   
+    height: .68rem;
+}
+
+/*deal_list*/
+
+.home_deal_box{
+    width: 100%;
+    height: auto;
+    margin-top: .2rem;
+}
+.home_deal_list{
+    width: 100%;
+    /* display: flex;
+    justify-content:space-sp;
+    flex-wrap: wrap; */
+}
+.home_deal_item{
+    display: block;
+    float: left;
+    margin-left: 0.22rem;
+    width: 3.40rem;
+    margin-bottom: .2rem;
+    border: 2px solid #ccc;
+    box-sizing: content-box;
+}
+.home_deal_item img{
+    width: 100%;
+    height: 100%;
+}

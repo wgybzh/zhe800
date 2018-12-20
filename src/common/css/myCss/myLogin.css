@@ -1,0 +1,123 @@
+input{
+    border: 0;
+    outline: none
+}
+
+.myHeadBanner{
+    width: 100%;
+    height: 2.56rem;
+}
+.myHeadBanner>img{
+    width: 100%;
+    height: 100%;
+}
+.myHeadBanner>a{
+    display: block;
+    position: fixed;
+    top:.3rem;
+    left: .3rem;
+    width: .42rem;
+    height:.42rem;
+    background: rgba(2,2,2, .2);
+    text-align: center;
+    line-height: .42rem;
+    border-radius: 50%
+}
+.myloginSear{
+    width: 100%;
+    height: 1.1rem;
+    position: relative
+}
+.myloginSear>img{
+    width: 100%;
+    height: 100%;
+}
+.myloginSear>.myloginSearCon{
+    width: 100%;
+    height: 1.1rem;
+    position: absolute;
+    left: 0;
+    top:0;
+    display: flex;
+    justify-content: space-around;
+    font-size: 30px;
+    
+}
+.myloginSear>.myloginSearCon>a{
+    display: inline-block;
+    height: 100%;
+    line-height: 1.1rem;
+    font-family: '微软雅黑';
+}
+.myloginSear>.myloginSearCon>.active{
+    color: #c33;
+    border-bottom: 2px solid #c33
+}
+.myLoginNum{
+    width: 100%;
+    height: 4.48rem;
+   
+    margin-top: .4rem
+}
+.myLoginNum>p{
+    width: 95%;
+    height: 1.2rem;
+    margin:0 .2rem;
+    border-bottom: 1px solid #ccc;
+    line-height: .45rem;
+    
+}
+.myLoginNum>p>input{
+    height: 100%;
+    width: 50%;
+    font-size: 25px;
+    padding-left: .2rem
+}
+#myLoginNum>p>i{
+    font-size: 30px;
+}
+#myLoginNum>p>span{
+    display: inline-block;
+    width: 2.3rem;
+    height: 0.5rem;
+    border: 1px solid #ccc;
+    background: #efefef;
+    border-radius: .25rem;
+    text-align: center
+}
+.myLoginNum>a{
+    display: block;
+    width: 6.3rem;
+    height: .8rem;
+    background: #c33;
+    margin: .5rem auto 0;
+    color: #fff;
+    text-align: center;
+    line-height:.8rem;
+    font-size: 40px;
+    font-family: '微软雅黑';
+    border-radius: .1rem
+}
+/* http://status.tuanimg.com/statics/mz/common/img/icon_all.png */
+.myLoginNum>div{
+    width: 6.3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: .40rem auto 0;
+}
+/* 注册 */
+.myRegisterTop{
+    width: 100%;
+    height: .97rem;
+    background: #efefef;
+    text-align: center;
+    line-height: .97rem;
+    font-size: .40rem;
+    font-family: '微软雅黑';
+}
+.myRegisterTop>a{
+    position: fixed;
+    left: 0;
+    top: 0;
+}

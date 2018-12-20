@@ -1,0 +1,55 @@
+#footer>ul>li>.active{
+    color: #c33;
+    background: #fff;
+    
+}
+
+*{
+    margin:0;
+    padding: 0;
+}
+#footer{
+    width: 100%;
+    height: .90rem;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background: #fff;
+    user-select: none;
+    border-top: 1px solid #ccc
+}
+
+#footer>ul{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#footer>ul>li{
+    width: 100%;
+    height: 100%;
+    padding-top: 0.05rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#footer>ul>li>a{
+    display: block;
+    width: 100%;
+    height:.90rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    color: gray;
+    text-decoration: none;
+    
+}
+#footer>ul>li i{
+    font-size: .38rem;
+}
+#footer>ul>li i,#footer>ul>li span{
+    display: block;
+}
