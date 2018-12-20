@@ -81,19 +81,17 @@
 }
 .home_nav_cont .item>a{
     display: block;
-   
     height: .68rem;
     overflow: hidden;
 }
 .home_nav_cont .item>a>span{
     display: block;
-    height: .69rem;
+    height: .67rem;
     margin: 0 .28rem;
     border-bottom: .04rem solid #fff;
     line-height: .68rem;
     font-size: 0.28rem;
-    
-        box-sizing: border-box;
+        /* box-sizing: border-box; */
     
 }
 .home_nav_cont .item.on span{
@@ -122,11 +120,16 @@
     width: 75%;
     height: .68rem;
 }
-
-.swiper-slide{
-   
-    height: .68rem;
+.swiper-nav{
+    width: 15.96rem;
 }
+.swiper-wrapper{
+    width: 100%;
+}
+.swiper-slide{
+    width: 1.12rem !important;
+}
+
 
 /*deal_list*/
 
@@ -144,13 +147,155 @@
 .home_deal_item{
     display: block;
     float: left;
+   
     margin-left: 0.22rem;
     width: 3.40rem;
+    height: 4.50rem;
     margin-bottom: .2rem;
     border: 2px solid #ccc;
     box-sizing: content-box;
 }
-.home_deal_item img{
+.goods_img{
+    width: 100%;
+    height: 3.40rem;
+    position: relative;
+    overflow: hidden;
+}
+.goods_img img{
     width: 100%;
     height: 100%;
+}
+.goods_info{
+    margin: .1rem .15rem 0;
+    text-align: center;
+    z-index: 2;
+}
+.goods_info .title {
+    overflow: hidden;
+    font-size: .26rem;
+    height: .5rem;
+    line-height: .5rem;
+    font-weight: 400;
+    color: #333;
+}
+.goods_info .coupon {
+    font-size: .3rem;
+    color: #E60044;
+    height: .5rem;
+    line-height: .5rem;
+    overflow: hidden;
+}
+.goods_topic_type{
+    position: absolute;
+    bottom: -.46rem;
+    left: 50%;
+    margin-left: -.46rem;
+    width: .93rem;
+    height: .93rem;
+    border-radius: 50%;
+    background: #fff;
+    font-size: .26rem;
+    color: #666;
+    line-height: .54rem;
+    text-align: center;
+}
+.sold{
+    position: absolute;
+    left: 0;
+    bottom: .10rem;
+    color: #fff;
+    font-size: .2rem;
+    height: .26rem;
+    line-height: .26rem;
+    background: #999;
+    padding: 0 .04rem;
+}
+.goods_info h3{
+    font-size: .24rem;
+    width: 3rem;
+    height: .5rem;
+    line-height: .5rem;
+    margin: .1rem auto 0;
+    font-weight: 400;
+    color: #666;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.goods_info h3 em {
+    width: .26rem;
+    height: .26rem;
+    text-align: center;
+    line-height: .26rem;
+    color: #fff;
+    font-size: .2rem;
+    margin-right: .04rem;
+    font-style: normal;
+}
+.goods_info h3 em.tao{
+    background: #f5a623;
+}
+.goods_info h3 em.mao{
+    background:  #E60044;
+}
+
+.goods_info h4{
+    width: 3rem;
+    height: .5rem;
+    margin: 0 auto;
+    line-height: .3rem;
+    overflow: hidden;
+    font-weight: 400;
+}
+.goods_info h4 .price{
+    color: #E60044;
+}
+.goods_info h4 em,b{
+    font-style: normal;
+}
+.goods_info h4 b{
+    font-size: .24rem;
+}
+.price{
+    float: left;
+}
+.price1 {
+    font-size: .36rem;
+}
+.price2 {
+    font-size: .24rem;
+}
+.list_price {
+    font-size: .2rem;
+    color: #B5B5B5;
+    margin-left: .08rem;
+}
+.coupon_price{
+    display: block;
+    margin-left: .1rem;
+    line-height: .34rem;
+    float: left;
+}
+.coupon_price_text{
+    color: #E60044;
+    font-size: .24rem;
+    max-width: 1.7rem;
+    line-height: .24rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  
+}
+.right_coupon{
+    font-size: .2rem;
+    color: #fff;
+    text-align: center;
+    line-height: .26rem;
+    background: url(//status.tuanimg.com/statics/mz/common/img/coupon.png);
+    background-size: contain;
+    width: .78rem;
+    height: .26rem;
+    float: right;
+    margin-top: .05rem;
 }
