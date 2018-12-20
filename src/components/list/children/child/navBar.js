@@ -1,14 +1,15 @@
 import React,{Component,Fragment} from 'react' 
+import {HashRouter as Router , Link} from 'react-router-dom'
 import {connect} from "react-redux"
 
-import {getData_action} from "../../../../action/list/actionCreator"
+import {getData_action,getList_action} from "../../../../action/list/actionCreator"
 import Swiper from 'swiper'
 import '../../../../../node_modules/swiper/dist/css/swiper.css'
 
 
 class BrandNavBar extends Component{
     render(){
-        let {navList} =this.props
+        let {navList,getList} =this.props
       //  console.log(navList.length)
         return(
             <Fragment>
@@ -16,31 +17,25 @@ class BrandNavBar extends Component{
                     <div className="swiper-wrapper"  >            
                             {
                                navList.map((item,index)=>{
-                                    return  <div  key={index} className="swiper-slide nav_item" >
-                                                <img src={item.pic} alt=""/>
-                                                <span>{item.name}</span>
+                                    return  <div key={index} className="swiper-slide nav_item" 
+                                                 onClick={getList.bind(this,index)}>
+                                                    <img src={item.pic} alt=""/>
+                                                    <span>{item.name}</span>
                                             </div>
                                 })
                             }
-                       
-
                     </div>
-                       
-                    
                     <div className="swiper-pagination"></div>
-                    
                 </div>
             </Fragment>
         )
     }
     componentDidMount(){
         this.props.getData()
-       
-      
     }
     componentDidUpdate(){
         new Swiper (".swiper-container1",{
-          
+            
             slidesPerView:"auto",
             freeMode:true
         }) 
@@ -53,6 +48,9 @@ const mapStateToProps = (state)=>({
 const mapDispatchToProps = (dispatch)=>({
     getData(){
         dispatch(getData_action())
+    },
+    getList(index){
+        dispatch(getList_action(index))
     }
 })
 export default connect(mapStateToProps,mapDispatchToProps)(BrandNavBar)
