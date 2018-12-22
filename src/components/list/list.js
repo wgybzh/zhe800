@@ -9,8 +9,8 @@ export default class List extends Component{
    render(){
        return(
            <Fragment>
-               <BrandName/>
-               <div id="main">
+               <BrandName />
+               <div id="main" ref="main">
                     <BrandHotSell/>
                     <BrandNavBar/>
                     <BrandList/>
@@ -18,5 +18,4 @@ export default class List extends Component{
            </Fragment>
        )
    }
-  
 }

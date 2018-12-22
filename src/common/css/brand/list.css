@@ -1,3 +1,6 @@
+#brand{
+    background: #d1d1d1
+}
 #brand,#hotsell{
     width:100%;
     height:.87rem;
@@ -7,6 +10,20 @@
     font-size: 34px;
     line-height: .46rem;
     color:#000;
+}
+#hotsell{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    position: relative;
+    z-index: 1
+}
+#hotsell>#hot{
+    text-align: center;
+    width:1.6rem;
+    border-bottom: 2px solid #f00
 }
 #brand i{
     float: left;
@@ -20,6 +37,7 @@
     left:0;
     overflow: scroll;
     overflow-x: hidden;
+    background: #fff
 }
  
 #main #hotsell{
@@ -47,8 +65,6 @@
     justify-content: space-between;
     align-items: center;
     flex-direction: column
-    
-
 }
 .nav_wrap>.swiper-wrapper>.nav_item img{
     
@@ -56,7 +72,59 @@
     width:1rem;
     height:.7rem;
     padding: 0.05rem .2rem;
-    margin: .2rem ;
+    margin: .2rem .2rem -1rem;
+}
+.nav_wrap>.swiper-wrapper>.nav_item span{
+    margin-bottom: .15rem
+}
+.right{
+    float:right;
+    padding: 0.05rem .2rem;
+    margin: .2rem .2rem -1rem;
+    font-size:20px;
+}
 
+
+
+
+/* // */
+#list_wrap{
+    width:100%;
+    height: 8.42rem;
+    overflow:scroll;
+
+    /* position: fixed;
+    left:0;
+    bottom: .84rem */
+}
+#list_wrap>.list_item{
+    width:100%;
+    height: 3.75rem;
+    position: relative;
+}
+#list_wrap>.list_item>img{
+    width: 100%;
+    height: 3.2rem;
+}
+#list_wrap>.list_item>.day{
+    position: absolute;
+    width:100%;
+    bottom: .8rem;
+    left:.15rem;
+    font-size: 28px
+}
+#list_wrap>.list_item>.title{
+    height:.35rem;
+    width:100%;
+    padding: 0.2rem;
+    font-size: 16px;
+    color: gray;
+    font-size: 15px;
+    line-height:.6rem;
+     font-size:26px
+}
+#list_wrap>.list_item>.day>.hui{
+    color:red;
+    font-style: normal
 }
 

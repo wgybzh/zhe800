@@ -10,10 +10,12 @@ import CarCom from "./carList/carCom"
        let {list} = this.props
        console.log(this.props)
        return(
+
            <div>
                 <CarCom/>
                 <CarList/>
            </div>
+
        )
    }
    componentDidUpdate(){

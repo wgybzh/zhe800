@@ -31,6 +31,7 @@ class App extends Component {
                 </span>
                 </NavLink>
               </li>
+              
               <li>
                 <NavLink to="/index/list">
                 <i className="iconfont">&#xe629;</i>
@@ -41,9 +42,11 @@ class App extends Component {
               </li>
               <li>
 
+
                
 
                 <NavLink to={flag?"/car":"/mylogin/myLoginLetter"}>
+
                 <i className="iconfont">&#xe602;</i>
 
                 <span>
