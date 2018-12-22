@@ -1,7 +1,8 @@
 
 const defaultState = {
         navList:[],
-        list:[]
+        list:[],
+        morelist:[]
 } 
 export default (state = defaultState,action)=>{
     // eslint-disable-next-line default-case
@@ -14,6 +15,11 @@ export default (state = defaultState,action)=>{
             let list = JSON.parse(JSON.stringify(state));
                 list.list=action.payload
             return list
+
+
+            
+       // case "INSHOP_DATA_FULFILLED":  进入购物页面
+
     }
     return state
 }

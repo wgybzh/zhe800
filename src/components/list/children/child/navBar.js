@@ -20,7 +20,7 @@ class BrandNavBar extends Component{
                                     return  <div key={index} className="swiper-slide nav_item" 
                                                  onClick={getList.bind(this,index)}>
                                                     <img src={item.pic} alt=""/>
-                                                    <span>{item.name}</span>
+                                                    <span data-index={index}>{item.name}</span>
                                             </div>
                                 })
                             }
@@ -34,11 +34,34 @@ class BrandNavBar extends Component{
         this.props.getData()
     }
     componentDidUpdate(){
-        new Swiper (".swiper-container1",{
-            
-            slidesPerView:"auto",
-            freeMode:true
-        }) 
+            //var vm = this;
+            var mySwiper = new Swiper ('.swiper-container1', {
+            freeMode:true,
+            slidesPerView:'auto',
+            //  on:{
+            //     click(){ //单击 当前导航条的标准位置
+            //         // console.log(this)
+            //         // console.log(this.clickedIndex);
+            //         // console.log(this.wrapperEl.clientWidth);
+            //        // vm.curIndex = this.clickedIndex;
+            //             this.setTransition(30);
+            //             var el = this.slides[this.clickedIndex]; //当前单击 元素
+            //             var elpos=el.offsetLeft + el.clientWidth/2; //点击元素 元素中心位置
+            //             var swiperContainerWidth = this.wrapperEl.clientWidth; //容器的宽度
+            //             var maxDis = this.maxTranslate(); //最大的滚动距离
+            //             var maxPos = -maxDis + swiperContainerWidth/2;//最大的中心位置
+            //             console.log(elpos,swiperContainerWidth,maxDis)
+            //             if(elpos < swiperContainerWidth/2){
+            //                 this.setTranslate(0)
+            //             }else if(elpos>maxPos){
+            //                 this.setTranslate(maxDis)
+            //             }else{
+            //                 this.setTranslate(swiperContainerWidth/2-elpos)
+            //             }
+
+            //           }
+            //     }
+            })
     }
 }   
 const mapStateToProps = (state)=>({

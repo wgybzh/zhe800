@@ -1,20 +1,24 @@
 import React,{Component,Fragment} from 'react' 
 import {connect} from "react-redux"
-import {getList_action} from "../../../../action/list/actionCreator"
+import {Link} from 'react-router-dom'
+import {getList_action,inShop_action} from "../../../../action/list/actionCreator"
 class BrandList extends Component{
     render(){
+        console.log(this.props)
        let {list} = this.props
-       console.log(this.props)
         return(
             <Fragment>
                 <ul id="list_wrap" ref="list">
                     {list.map((item,index)=>{
                         
-                        return  <li key={index} className="list_item">
+                        return  <Link key={index} className="list_item"
+                        data-id={item.id}
+                                    to={'/index/my/'+item.id}>
                                     <img src={item.image_url} />
                                    <span className="title">{item.title}</span>
+                                   <span className="right">今日上新</span>
                                    <span className="day"><i className="hui">惠&nbsp;</i>{item.brand.promotion_info}</span>
-                        </li>
+                        </Link>
                     })}
                 </ul>
             </Fragment>
