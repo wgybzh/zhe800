@@ -14,6 +14,8 @@ export default (state=defaultState,action)=>{
         let homeNavState = JSON.parse(JSON.stringify(state));
         homeNavState.homeNavList = action.payload;
         return homeNavState;
+
+        // case ""
         default:
     }
     return state;

@@ -23,14 +23,14 @@ import List from "./components/list/list"
       <Provider store = {store}>
           <Router>
                 <main>
-                     <Switch>
+                    <Switch>
                             <Route path="/list" component={List} />
                             <Route path="/index" component={Index} />
-                           
                             <Route path="/mylogin" component={MyLogin} />
                             <Route path="/myregister" component={MyRegister} />
-                            <Redirect path="/" to="/index/home" />
-                      </Switch>
+                            <Redirect path="/" to="/index/home/deal/tj" />
+                    </Switch>  
+                     
                 </main>
                 
           </Router>
