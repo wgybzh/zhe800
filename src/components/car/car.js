@@ -12,8 +12,6 @@ import "../../common/css/cart/cart.css"
        console.log(this.props)
        return(
            <div>
-               <a href={"#/car/"+1}> 111 </a>
-               <a href={"#/car/"+1}> 111 </a>
                 <CarList/>
            </div>
        )

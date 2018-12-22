@@ -14,13 +14,8 @@ export const get_car_action = (dispatch)=>{
         })
     })
 }
-
-//https://m.api.zhe800.com/list/deals/v2?user_id=85480025&user_type=1&user_role=4&limit=20&offset=20&visit_bit=null&cookie_id=&client_type=3&image_type=si1&url_name=wireless3943&min_price=&max_price=&order=&shop_type=&callback=m_datacenter_api
-
-
-
 //https://m.api.zhe800.com/list/deals/v2?user_id=85480025&user_type=1&user_role=4&limit=20&offset=60&visit_bit=null&cookie_id=&client_type=3&image_type=si1&url_name=wireless3943&min_price=&max_price=&order=&shop_type=&callback=m_datacenter_api
-//https://m.api.zhe800.com/list/deals/v2?user_id=85480025&user_type=1&user_role=4&limit=20&offset=20&visit_bit=null&cookie_id=&client_type=3&image_type=si1&url_name=wireless3943&min_price=&max_price=&order=&shop_type=&callback=m_datacenter_api
+
 export const get_load_action = (dispatch,val)=>{
     let url = "https://m.api.zhe800.com/list/deals/v2?user_id=85480025&user_type=1&user_role=4&limit=20&offset="+val+"&visit_bit=null&cookie_id=&client_type=3&image_type=si1&url_name=wireless3943&min_price=&max_price=&order=&shop_type="
     dispatch({
