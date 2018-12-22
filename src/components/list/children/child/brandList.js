@@ -1,10 +1,9 @@
 import React,{Component,Fragment} from 'react' 
 import {connect} from "react-redux"
 import {Link} from 'react-router-dom'
-import {getList_action,inShop_action} from "../../../../action/list/actionCreator"
+import {getList_action} from "../../../../action/list/actionCreator"
 class BrandList extends Component{
     render(){
-        console.log(this.props)
        let {list} = this.props
         return(
             <Fragment>
@@ -13,7 +12,7 @@ class BrandList extends Component{
                         
                         return  <Link key={index} className="list_item"
                         data-id={item.id}
-                                    to={'/index/my/'+item.id}>
+                                    to={'/index/shop/'+item.id}>
                                     <img src={item.image_url} />
                                    <span className="title">{item.title}</span>
                                    <span className="right">今日上新</span>

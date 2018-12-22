@@ -16,8 +16,6 @@ export default (state = defaultState,action)=>{
                 list.list=action.payload
             return list
 
-
-            
        // case "INSHOP_DATA_FULFILLED":  进入购物页面
 
     }
