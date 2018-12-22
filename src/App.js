@@ -12,7 +12,7 @@ import MyLogin from "./components/my/myLogin/myLogin"
 
 import MyRegister from "./components/my/myRegister/myRegister"
 
-
+import Car from "./components/car/car"
 import List from "./components/list/list"
  import store from "./store"
  import {Provider} from 'react-redux'
@@ -26,7 +26,7 @@ import List from "./components/list/list"
                      <Switch>
                             <Route path="/list" component={List} />
                             <Route path="/index" component={Index} />
-                           
+                            <Route path="/car" component={Car}/>
                             <Route path="/mylogin" component={MyLogin} />
                             <Route path="/myregister" component={MyRegister} />
                             <Redirect path="/" to="/index/home" />

@@ -4,10 +4,10 @@ import { Provider } from "react-redux";
 import store from "../store";
 import Home from "../components/home/home";
 import List from "../components/list/list";
-import Car from '../components/car/car';
 import My from "../components/my/my";
 class App extends Component {
   render() {
+    let flag = localStorage.getItem("flag")
     return (
       <Provider store={store}>
      <Router>
@@ -18,7 +18,6 @@ class App extends Component {
             <section>
               <Route path="/index/home" component={Home}/>
               <Route path="/index/list" component={List}/>
-              <Route path="/index/car" component={Car}/>
               <Route path="/index/my" component={My}/>
               
           </section>
@@ -42,7 +41,12 @@ class App extends Component {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/index/car">
+
+
+               
+
+                <NavLink to={flag?"/car":"/mylogin/myLoginLetter"}>
+
                 <i className="iconfont">&#xe602;</i>
 
                 <span>

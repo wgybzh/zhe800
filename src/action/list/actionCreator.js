@@ -7,6 +7,10 @@ export const getData_action = ()=>({
         .then(res=>res.json())
         .then((data)=>{
             resolve(data.brandTag[0].categories)
+
+            //console.log(data.brandTag[0].categories)
+            
+
         })
     })
 })

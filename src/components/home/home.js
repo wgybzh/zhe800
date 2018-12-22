@@ -8,12 +8,13 @@ import HomeSer from "./children/homesSer"
 import HomeNav from "./children/homeNav"
 import HomeDealList from "./children/homeDealList"
 import {
-    dealList_action
+    dealList_action,
+    homeNav_action 
 } from "../../action/actionCreator"
 
  class Home extends Component{
    render(){
-       let {homeDealList} = this.props;
+       let {homeDealList,navList} = this.props;
        return(
            <Fragment>
              
@@ -21,24 +22,29 @@ import {
                       <img  src={home_header_logo}/>
                     </div>
                    <HomeSer/>
-                   <HomeNav />
+                   <HomeNav navList={navList} />
                    <HomeDealList  dealList={homeDealList}/>
            </Fragment>
        )
    }
    componentDidMount(){
     this.props.getHomeDealListData();
+    this.props.getHomeNavData();
 }
   
 }
 
 const mapStateToProps = (state)=>({
-    homeDealList:state.home.homeDealList
+    homeDealList:state.home.homeDealList,
+    navList:state.home.homeNavList
 })
 
 const mapDispatchToProps = (dispatch)=>({
     getHomeDealListData(){
         dispatch( dealList_action());
+    },
+    getHomeNavData(){
+        dispatch(homeNav_action());
     }
 })
 export default connect(mapStateToProps,mapDispatchToProps)(Home)
