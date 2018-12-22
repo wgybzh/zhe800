@@ -4,10 +4,10 @@ import {connect} from "react-redux"
     render(){
         return (
             <div className="myLoginOk">
-                <p>
+                <div>
                     <h2>未知用户</h2>
                     <span>账号信息</span>
-                </p>
+                </div>
                 <i className="fa fa-chevron-right"></i>
             </div>
                             

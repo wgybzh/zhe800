@@ -1,35 +1,35 @@
 import React,{Component,Fragment} from "react";
 import {get_car_action} from "../../action/cart/cartAction"
 import {connect} from "react-redux"
+import Loadable from "react-loadable"
+import CarList from "./carList/nomin"
+import "../../common/css/cart/cart.css"
+//import CarSwiper from "./carList/carSwiper"
+//import CarNavBar from "./carList/CarNavBar"
+import CarCom from "./carList/carCom" 
  class Car extends Component{
    render(){
        let {list} = this.props
+       console.log(this.props)
        return(
-           <Fragment>
-               <i className="fa fa-mail-reply" onClick={this.goback.bind(this)}></i>
-                <ul>
-                    {
-                        list.map((item,index)=>{
-                            return <li key={index}> {item.title} </li>
-                        })
-                    }
-                </ul>
-           </Fragment>
+
+           <div>
+                <CarCom/>
+                <CarList/>
+           </div>
+
        )
    }
-   goback(){
-       this.props.history.goBack()
+   componentDidUpdate(){
+       console.log(this.props)
    }
    componentDidMount(){
-       this.props.getData()
    }
 } 
 const mapStateToProps = (state)=>({
-    list:state.cart.list
+   
 })
 const mapDispatchToProps = (dispatch)=>({
-    getData(){
-        get_car_action(dispatch)
-    }
+   
 })
 export default connect(mapStateToProps,mapDispatchToProps)(Car)

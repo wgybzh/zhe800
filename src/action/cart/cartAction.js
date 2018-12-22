@@ -8,9 +8,29 @@ export const get_car_action = (dispatch)=>{
             fetchJsonp(url)
             .then(res=>res.json())
             .then((data)=>{
-                console.log(data)
+               // console.log(data)
                 resolve(data)
             })
         })
     })
 }
+//https://m.api.zhe800.com/list/deals/v2?user_id=85480025&user_type=1&user_role=4&limit=20&offset=60&visit_bit=null&cookie_id=&client_type=3&image_type=si1&url_name=wireless3943&min_price=&max_price=&order=&shop_type=&callback=m_datacenter_api
+
+export const get_load_action = (dispatch,val)=>{
+    let url = "https://m.api.zhe800.com/list/deals/v2?user_id=85480025&user_type=1&user_role=4&limit=20&offset="+val+"&visit_bit=null&cookie_id=&client_type=3&image_type=si1&url_name=wireless3943&min_price=&max_price=&order=&shop_type="
+    dispatch({
+        type:"GET_LOAD",
+        payload:new Promise(resolve=>{
+            fetchJsonp(url)
+            .then(res=>res.json())
+            .then((data)=>{
+                //console.log(data.objects)
+               resolve(data.objects)
+            })
+        })
+    })
+}
+export const flag_action = (val)=>({
+    type:"FLAG_ACTION",
+    value:val
+})
