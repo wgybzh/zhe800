@@ -1,28 +1,17 @@
 import React,{Component} from "react"
 import { type } from "os";
 
-import { redBright } from "ansi-colors";
-import {connect} from "react-redux";
-
-
-import {
-    dealList_action,
-  
-} from "../../../action/actionCreator"
- class HomeDealList extends Component{
-   
+export default class CreatelList extends Component{
+    
     render(){
-      
-        let {dealList} = this.props;
+        let {createList} = this.props;
         return(
             <div className="home_deal_box">
-
             <div className="home_deal_list">
             {
                 dealList.length>0?dealList.map((item,index)=>{
                    
-                    return  item.brand?<a className="home_deal_item" key={index} href={"https:"+item.brand.out_url}>
-
+                    return  item.brand?<a className="home_deal_item" key={index}>
                        
                             <div className="goods_img">
                              <img src={item.image_url}></img>
@@ -36,11 +25,11 @@ import {
                                
                             </a>:
                             
-                            <a className="home_deal_item" key={index} href={item.deal.out_url}>
+                            <a className="home_deal_item" key={index}>
                         
                                 <div className="goods_img">
                                 <img src={item.image_url}></img>
-                                <div className={item.deal.sales_count>1000?"soldTwo":"soldOne"}>{item.corner.image_labels[0]?item.corner.image_labels[0].text:""}</div>
+                                <div className="sold">{item.corner.image_labels[0].text}</div>
                             </div>
                             <div className="goods_info">
                                 <h3>
@@ -69,29 +58,4 @@ import {
     </div>
         )
     }
-    componentDidMount(){
-       
-        this.props.getHomeDealListData(this.props.match.params.id);
-       
-    }
-    
-    // shouldComponentUpdate(newprops,newstate){
-    // //     this.props.getHomeDealListData(this.props.match.params.id);
-    //   }
-    
 }
-  
-const mapStateToProps = (state)=>({
-    dealList:state.home.homeDealList
- })
-
- const mapDispatchToProps = (dispatch)=>({
-    getHomeDealListData(id){
-       
-        dispatch( dealList_action(id));
-    },
-    alert(){
-        console.log(11)
-    }
-})
-export default connect(mapStateToProps,mapDispatchToProps)(HomeDealList)
