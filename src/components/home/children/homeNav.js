@@ -1,58 +1,120 @@
 import React,{Component} from "react";
-import {Link} from "react-router-dom"
+import {NavLink} from "react-router-dom"
 import "../css/style.css"
-import "../../../../node_modules/swiper/dist/css/swiper.css"
+
 import swiper from "swiper"
+
+
 export default class HomeNav extends Component{
+    constructor(){
+        super();
+        this.state={
+            flag:true
+        }
+    }
    render(){
        let {navList} = this.props;
-       
+       let {flag} = this.state;
+
+
        return(
            <nav className="home_nav">
-           <div className="home_nav_cont">
-               <div className="item all on">
-                   <a href="#/">
+            <div className="home_nav_cont">
+            <div className="item" style={{"display":flag?"block":"none"}}>
+            <NavLink to={"/index/home/deal/tj"} onClick={this.go.bind(this)} >
+                   <p>
                        <span>推荐</span>
-                   </a>
-               </div>
-             
-               <div className="swiper-nav_wrap" id="swiper-nav_wrap">
-              <div className="swiper-nav">
-                <ul className="swiper-wrapper">
-                {
-                    navList.length>0?navList.map((item,index)=>{
-                        return  <li className="swiper-slide item" key={index} onClick={this.toList}>
-                                    <a href="jacascript:void;">
-                                        <span>{item.name}</span>
-                                    </a>
-                                </li>
-                    }):""
-                }
+                   </p>
+            </NavLink>
+               </div> 
+               <div className="selitem item" style={{"display":!flag?"block":"none"}}>
+                   <p>
+                       <span>选择分类</span>
+                   </p>
+               </div> 
+
+                   <div className="swiper-container" ref="swiper_nav" style={{"display":flag?"block":"none"}}>
+
+                        <div className="swiper-wrapper">
+                        {
+                            navList.length>0?navList.map((item,index)=>{
+                                return  <div className="swiper-slide item" key={index} >
+                                <NavLink to={"/index/home/deal/"+item.url_name} onClick={this.go.bind(this)}>
+                                             <p >
+                                                    <span>{item.name}</span>
+                                            </p>
+                                </NavLink>
+                                               
+                                        </div>
+
+                                
+                            }):""
+                        }
+                       
+                        </div>
+                    </div>
+                    <div className="list_box" style={{"display":!flag?"block":"none"}}>
+                    
+                   
+                       <div id="list_box_top">
+                           {
+                            navList.length>0?navList.map((item,index)=>{
+                                return  <div className="list_item" key={index} > 
+                                <NavLink to={"/index/home/deal/"+item.url_name} onClick={this.go.bind(this)}>
+                                             <p >
+                                                    <span>{item.name}</span>
+                                            </p>
+                                </NavLink>
+                                               
+                                        </div>
+
+                                
+                            }):""
+                        }
+                       </div>
                    
                    
-                 </ul>
-              </div>
-              </div>
+                         <div id="list_box_bot">
+                            <a href="#/homebranch">更多分类</a>
+                        </div>
+                    </div>
 
                <div className="drop_down">
-                <div className="drop-down-bg">
+                <div className={flag?"drop-down-bg":"drop-down-bg on"} onClick={this.hangleNav.bind(this)}>
                     <i className="iconfont">&#xe605;</i>
                 </div>
-               </div>
-               
-               </div>
+               </div> 
+                </div> 
            </nav>
        )
    }
-   componentDidUpdate(){
-       new swiper(".swiper-nav",{
-           slidesPerView:"auto"
-       })
-   }
    componentDidMount(){
-      
+       setTimeout(()=>{
+        new swiper(this.refs.swiper_nav,{
+             slidesPerView : "auto",
+             slidesPerGroup : 4,
+            longSwipesRatio : 0.3,
+             preventLinksPropagation : false,
+            slideToClickedSlide: true,
+        })
+       },1000)
+     
    }
-   toList(){
-    console.log()
+
+   hangleNav(){
+    this.setState({
+        flag:!this.state.flag
+    })
+   }
+  
+
+go(){
+    window.location.reload();
+    this.setState({
+        flag:true
+    })
 }
 }
+ 
+
+

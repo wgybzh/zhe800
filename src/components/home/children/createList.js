@@ -1,26 +1,17 @@
 import React,{Component} from "react"
-import {connect} from "react-redux";
+import { type } from "os";
 
-import {
-    dealList_action,
-
-} from "../../../action/actionCreator"
- class HomeDealList extends Component{
-   constructor(props){
-       super(props)
-       this.flag=false;
-   }
+export default class CreatelList extends Component{
+    
     render(){
-      
-        let {dealList,} = this.props;
+        let {createList} = this.props;
         return(
             <div className="home_deal_box">
-
             <div className="home_deal_list">
             {
                 dealList.length>0?dealList.map((item,index)=>{
                    
-                    return  item.brand?<a className="home_deal_item" key={index} href={"https:"+item.brand.out_url}>
+                    return  item.brand?<a className="home_deal_item" key={index}>
                        
                             <div className="goods_img">
                              <img src={item.image_url}></img>
@@ -34,11 +25,11 @@ import {
                                
                             </a>:
                             
-                            <a className="home_deal_item" key={index} href={item.deal.out_url}>
+                            <a className="home_deal_item" key={index}>
                         
                                 <div className="goods_img">
                                 <img src={item.image_url}></img>
-                                <div className={item.deal.sales_count>1000?"soldTwo":"soldOne"}>{item.corner.image_labels?item.corner.image_labels[0].text:""}</div>
+                                <div className="sold">{item.corner.image_labels[0].text}</div>
                             </div>
                             <div className="goods_info">
                                 <h3>
@@ -65,37 +56,6 @@ import {
                
             </div>
     </div>
-    
-    
         )
     }
-    componentDidMount(){
-        
-        this.props.getDealList(this.props.match.params.id)
-    }
-    componentDidUpdate(){
-        if(this.flag){
-            //this.props.getDealList(this.props.match.params.id);
-            
-            this.props.match.params.flag=false;
-        }
-        this.flag=this.props.match.params.flag
-     }
-   
-    
 }
-
- const mapStateToProps = (state)=>({
-        dealList:state.home.homeDealList,
-
-  })
-
- const mapDispatchToProps = (dispatch)=>({
-    getDealList(id){
-        dispatch( dealList_action(id));
-    },
-
-    
-   
- })
- export default connect(mapStateToProps,mapDispatchToProps)(HomeDealList)
