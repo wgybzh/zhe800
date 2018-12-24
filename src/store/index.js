@@ -6,9 +6,6 @@ import  reduxpromisemiddle from 'redux-promise-middleware'
 import myJudgeLogin from "../store/reducers/my/myJudgeLogin"
 import cart from "../store/reducers/cart/cartReducer"
 
-
-
-
 import home from  "../store/reducers/home/home"
 
  const reducers = combineReducers({
