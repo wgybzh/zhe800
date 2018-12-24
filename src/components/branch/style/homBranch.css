@@ -1,0 +1,70 @@
+.search-wrap{
+    width: 100%;
+    height: .9106rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #ccc
+}
+.search-input-text{
+    width: 6.5057rem;
+    height: .50rem;
+    text-align: center;
+    line-height: .50rem;
+    color: #b5b5b5;
+    background: #e9e8e8;
+    border-radius: .25rem
+}
+.new_topbar{
+    width: 100%;
+    height: 1.11rem;
+    border-bottom: 1px solid #ccc
+}
+
+.swiper-wrapper_navWrap{
+    width: 1.85rem;
+    height: 11.71rem;
+    text-align: center;
+    background: rgb(244, 245, 245);
+    overflow: auto;
+}
+.swiper-wrapper_navWrap>li{
+    width: 1.85rem  !important;
+    height:.91rem ;
+    line-height: .91rem;
+    text-align: center;
+    font-size: 30px;
+    display: block !important;
+}
+.swiper-wrapper_navWrap>.swiper-slide3>li>a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+   
+.homeBranchList>.homeBrandListWrap{
+    float: right;
+    position: fixed;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+   top:2.02rem;
+   left: 1.85rem;
+}
+.homeBrandListWrap>a>li{
+    float: left;
+}
+.homeBrandList img{
+    width: 1.2rem;
+    height: 1.2rem;
+    display: block;
+    margin: 0 auto
+}
+.homeBrandListWrap>a>li>p{
+    width: 1.80rem;
+    height: 1.84rem;
+    text-align: center
+}
+.activeList{
+    border-left: 2px solid #c33
+}

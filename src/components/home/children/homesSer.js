@@ -16,7 +16,7 @@ export default class HomeSer extends Component{
                             搜索低价商品
                         </div>
                         </a>
-                        <a className="home_ser_category" href="#/">
+                        <a className="home_ser_category" href="#/homebranch">
                         <i className="iconfont">&#xe61b;</i>
                         </a>
                     </div>

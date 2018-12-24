@@ -71,7 +71,7 @@ export default class HomeNav extends Component{
                    
                    
                          <div id="list_box_bot">
-                            <a>更多分类</a>
+                            <a href="#/homebranch">更多分类</a>
                         </div>
                     </div>
 
