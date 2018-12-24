@@ -1,10 +1,11 @@
 import React, { Component} from 'react';
-import {HashRouter as Router,Route,NavLink,} from "react-router-dom";
+import {HashRouter as Router,Route,NavLink,Redirect} from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "../store";
 import Home from "../components/home/home";
 import List from "../components/list/list";
 import My from "../components/my/my";
+
 class App extends Component {
   render() {
     let flag = localStorage.getItem("flag")
@@ -16,14 +17,14 @@ class App extends Component {
           </header>
               
             <section>
-              <Route path="/index/home" component={Home}/>
+              <Route path="/index/home" component={Home} />
               <Route path="/index/list" component={List}/>
               <Route path="/index/my" component={My}/>
-              
+             
           </section>
           <div id="footer">
             <ul>
-              <li>
+              <li onClick={this.handleTo.bind(this)}>
                 <NavLink to="/index/home">
                 <i className="iconfont"> &#xe669;</i>
                 <span>
@@ -54,7 +55,7 @@ class App extends Component {
                 </span>
                 </NavLink>
               </li>
-              <li>
+              <li >
                 <NavLink to="/index/my">
                   <i className="iconfont">&#xe604;</i>
                   <span>
@@ -68,6 +69,9 @@ class App extends Component {
      </Router>
      </Provider>
     );
+  }
+  handleTo(){
+     this.props.history.push("/index/home/deal/tj/true")
   }
  
 }

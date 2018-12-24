@@ -14,6 +14,7 @@ export const getData_action = ()=>({
         })
     })
 })
+
 export const getList_action = (val)=>({
     type:"GET_List",
     payload:new Promise(resolve=>{
