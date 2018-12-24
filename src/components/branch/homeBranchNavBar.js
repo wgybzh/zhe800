@@ -20,7 +20,7 @@ import HomeBranchList from "./homeBranchList"
                 {
                         navList.map((item,index)=>{
                             return <li className="swiper-slide swiper-slide3" key={index} onClick={this.getId.bind(this,item.url_name)}>
-                            <NavLink to="/homebranch" >{item.name}</NavLink>
+                            <span to="/homebranch" >{item.name}</span>
                             </li>
                         })
                     }

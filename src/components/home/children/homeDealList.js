@@ -1,10 +1,11 @@
 import React,{Component} from "react"
 
 
-import BScroll from "better-scroll";
+
 import {connect }from "react-redux"
 import {
-    dealList_action
+    dealList_action,
+
 } from "../../../action/actionCreator"
  class HomeDealList extends Component{
    constructor(props){
@@ -15,8 +16,7 @@ import {
       
         let {dealList,} = this.props;
         return(
-            <div className="wrapper" ref="wrapper">
-                <div className="content">
+            
 
             <div className="home_deal_box">
             <div className="home_deal_list">
@@ -68,32 +68,21 @@ import {
                
             </div>
     </div>
-    </div>
-    </div>
+    
     
         )
     }
     componentDidMount(){
         
         this.props.getDealList(this.props.match.params.id)
-
-        // this.scroll = new BScroll(this.refs.wrapper,{
-        //     click:true,
-        //     pullUpLoad:true,
-        //     probeType:2
-        // });
-        // console.log(this.scroll)
-       
-        
-       
     }
     componentDidUpdate(){
         if(this.flag){
-            this.props.getDealList(this.props.match.params.id)
+            //this.props.getDealList(this.props.match.params.id);
+            
             this.props.match.params.flag=false;
         }
         this.flag=this.props.match.params.flag
-        
      }
    
     
@@ -101,14 +90,13 @@ import {
 
  const mapStateToProps = (state)=>({
         dealList:state.home.homeDealList,
-        page:state.home.page
 
   })
 
  const mapDispatchToProps = (dispatch)=>({
     getDealList(id){
         dispatch( dealList_action(id));
-    }
+    },
 
     
    

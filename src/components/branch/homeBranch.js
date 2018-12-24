@@ -1,6 +1,6 @@
 
 import React,{Component,Fragment} from "react";
-//import {Link} from "react-router-dom"
+import {Link} from "react-router-dom"
 import {connect} from "react-redux";
 import "./style/homBranch.css"
 
@@ -16,7 +16,10 @@ import HomeBranchNavBar from "./homeBranchNavBar"
        return(
            <Fragment>
                <div className="search-wrap"> 
+             
+                    <Link to="/search">
                     <div className="search-input-text"> <i className="fa fa-search"></i> 搜低价商品</div>
+                    </Link>
                 </div>
                 <div className="new_topbar">
                     <span>分类</span><span>在售品牌</span>

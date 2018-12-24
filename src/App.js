@@ -6,9 +6,7 @@ import "./common/css/reset.css";
 import "./common/css/section.css";
 
 import Index from "./components/index"
-
 import MyLogin from "./components/my/myLogin/myLogin"
-
 import MyRegister from "./components/my/myRegister/myRegister"
 
 
@@ -18,6 +16,7 @@ import HomeBranch from "./components/branch/homeBranch"
 
 
 import List from "./components/list/list"
+import Search from "./components/search/search"
  import store from "./store"
  import {Provider} from 'react-redux'
 
@@ -35,7 +34,9 @@ import List from "./components/list/list"
                             <Route path="/homebranch" component={HomeBranch} />
                             <Route path="/mylogin" component={MyLogin} />
                             <Route path="/myregister" component={MyRegister} />
-                            <Redirect path="/" to="/index/home/deal/tj/true" />
+                            <Route path="/search" component = {Search} />
+                            <Redirect path="/" to="/index/home/deal/tj" />
+
                     </Switch>  
                      
                 </main>

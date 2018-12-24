@@ -71,6 +71,7 @@
     color: #e30c26;
     border-color: #e30c26;
 }
+
 .home_nav_cont{
     width: 100%;
     z-index: 2;
@@ -91,7 +92,10 @@
     width: 1.12rem;
     overflow: hidden;
 }
-
+.home_nav_cont .selitem p{
+    width: 2.24rem;
+    color: #666;
+}
 .home_nav_cont .item p span{
     display: block;
     height: .67rem;
@@ -101,7 +105,55 @@
     font-size: 0.28rem;
     
 }
-
+.list_box{
+    position: absolute;
+    z-index: 3;
+    width: 100%;
+    top: .68rem;
+    background: #efeded;
+    border:1px solid #ccc; 
+    
+}
+#list_box_top{
+    width: 100%;
+    height: 3.48rem;
+}
+.list_item{
+    float: left;
+    width: 25%;
+    height: .87rem;
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    font-size: .28rem;
+    text-align: center;
+    line-height: .87rem;
+    
+}
+.list_item p{
+   width: 100%;
+}
+.selitem>p>span{
+    text-align: center
+}
+#list_box_bot{
+    width: 100%;
+    height: 1.12rem;
+    padding: .2rem 0;
+    border-top: 1px solid #ccc;
+}
+#list_box_bot>a{
+    display: block;
+    width: 3.48rem;
+    height: .7rem;
+    margin: 0 auto;
+    border: .01rem solid #ccc;
+    border-radius: .1rem;
+    line-height: .7rem;
+    text-align: center;
+    font-size: .28rem;
+    color: #6a6969;
+    background-color: #fff
+}
 .home_nav_cont .all{
     width: 1.12rem;
 }
@@ -116,7 +168,7 @@
    font-size: .4rem;
   
 }
-.drop_down:hover{
+.drop_down .on{
     transform: rotateZ(-180deg)
 }
 .swiper-container{
@@ -321,6 +373,21 @@
     float: right;
     margin-top: .05rem;
 }
+#root{
+    height: 100%;
+}
 .wrapper{
     height: 100%;
 }
+.gotop_con {
+    position: fixed;
+    z-index: 800;
+    bottom:1.1rem;
+    right: .45rem;
+    width: 0.82rem;
+    height: 0.82rem;
+    border-radius: 1.06667rem;
+    background: url(//status.tuanimg.com/statics/mz/components/backTop/img/top_new.png) no-repeat 0 0;
+    background-size: .82rem;
+}
+
