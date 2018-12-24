@@ -28,8 +28,6 @@ export default class HomeDealList extends Component{
                                     <a className="home_deal_item" key={index}>
                                 
                                         <div className="goods_img">
-
-
                                         <img src={item.image_url}></img>
                                         <div className="sold">{item.corner.image_labels[0].text}</div>
                                     </div>
@@ -53,7 +51,6 @@ export default class HomeDealList extends Component{
                                         </h4>
                                     </div>   
                                 </a>
-
                         }):"正在加载"
                     }
                        
