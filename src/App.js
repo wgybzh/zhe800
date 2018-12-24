@@ -31,7 +31,7 @@ import Search from "./components/search/search"
                             <Route path="/mylogin" component={MyLogin} />
                             <Route path="/myregister" component={MyRegister} />
                             <Route path="/search" component = {Search} />
-                            <Redirect path="/" to="/index/home/deal/tj/true" />
+                            <Redirect path="/" to="/index/home/deal/tj" />
 
                     </Switch>  
                      
