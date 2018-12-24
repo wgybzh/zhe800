@@ -13,4 +13,3 @@ export const getData_action = ()=>({
         })
     })
 })
-

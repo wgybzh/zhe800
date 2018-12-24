@@ -11,7 +11,7 @@ import MyLogin from "./components/my/myLogin/myLogin"
 
 
 import MyRegister from "./components/my/myRegister/myRegister"
-
+import HomeBranch from "./components/branch/homeBranch"
 
 import List from "./components/list/list"
  import store from "./store"
@@ -26,7 +26,7 @@ import List from "./components/list/list"
                      <Switch>
                             <Route path="/list" component={List} />
                             <Route path="/index" component={Index} />
-                           
+                            <Route path="/homebranch" component={HomeBranch} />
                             <Route path="/mylogin" component={MyLogin} />
                             <Route path="/myregister" component={MyRegister} />
                             <Redirect path="/" to="/index/home" />
