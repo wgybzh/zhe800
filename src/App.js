@@ -28,7 +28,7 @@ import List from "./components/list/list"
                             <Route path="/index" component={Index} />
                             <Route path="/mylogin" component={MyLogin} />
                             <Route path="/myregister" component={MyRegister} />
-                            <Redirect path="/" to="/index/home/deal/tj" />
+                            <Redirect path="/" to="/index/home/deal/tj/true" />
                     </Switch>  
                      
                 </main>

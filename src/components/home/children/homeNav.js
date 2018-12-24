@@ -2,28 +2,28 @@ import React,{Component} from "react";
 import {NavLink} from "react-router-dom"
 import "../css/style.css"
 import swiper from "swiper"
+
+
 export default class HomeNav extends Component{
    render(){
-       let {navList,toList} = this.props;
-       
+       let {navList} = this.props;
        return(
            <nav className="home_nav">
             <div className="home_nav_cont">
             <div className="item all on">
-            <NavLink to="/index/home/deal/tj" onClick={this.goback}>
+            <NavLink to={"/index/home/deal/"+"tj"+"/"+true} >
                    <p>
                        <span>推荐</span>
                    </p>
             </NavLink>
                </div> 
-            {/* onClick={toList.bind(this,item.id)} */}
              
                    <div className="swiper-container" ref="swiper_nav">
                         <div className="swiper-wrapper">
                         {
                             navList.length>0?navList.map((item,index)=>{
-                                return  <div className="swiper-slide item" key={index} onClick={this.goback}> 
-                                <NavLink to={"/index/home/deal/"+item.url_name}>
+                                return  <div className="swiper-slide item" key={index} > 
+                                <NavLink to={"/index/home/deal/"+item.url_name+'/'+true}>
                                              <p >
                                                     <span>{item.name}</span>
                                             </p>
@@ -58,15 +58,9 @@ export default class HomeNav extends Component{
        },1000)
      
    }
-   goback(){
-    //   window.location.reload()
-   
-   }
+
   
-//    componentDidMount(){
-      
-//    }
-//    toList(id){
-//     console.log(id)
-// }
+  
+
 }
+ 

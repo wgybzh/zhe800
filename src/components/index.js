@@ -69,7 +69,7 @@ class App extends Component {
     );
   }
   handleTo(){
-     this.props.history.push("/index/home/deal/tj")
+     this.props.history.push("/index/home/deal/tj/true")
   }
  
 }

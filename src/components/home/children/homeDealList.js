@@ -1,19 +1,23 @@
 import React,{Component} from "react"
-import { type } from "os";
-import { redBright } from "ansi-colors";
-import {connect} from "react-redux";
 
 
+import BScroll from "better-scroll";
+import {connect }from "react-redux"
 import {
-    dealList_action,
-  
+    dealList_action
 } from "../../../action/actionCreator"
  class HomeDealList extends Component{
-   
+   constructor(props){
+       super(props)
+       this.flag=false;
+   }
     render(){
       
-        let {dealList} = this.props;
+        let {dealList,} = this.props;
         return(
+            <div className="wrapper" ref="wrapper">
+                <div className="content">
+
             <div className="home_deal_box">
             <div className="home_deal_list">
             {
@@ -37,7 +41,7 @@ import {
                         
                                 <div className="goods_img">
                                 <img src={item.image_url}></img>
-                                <div className={item.deal.sales_count>1000?"soldTwo":"soldOne"}>{item.corner.image_labels[0]?item.corner.image_labels[0].text:""}</div>
+                                <div className={item.deal.sales_count>1000?"soldTwo":"soldOne"}>{item.corner.image_labels?item.corner.image_labels[0].text:""}</div>
                             </div>
                             <div className="goods_info">
                                 <h3>
@@ -64,31 +68,49 @@ import {
                
             </div>
     </div>
+    </div>
+    </div>
+    
         )
     }
     componentDidMount(){
+        
+        this.props.getDealList(this.props.match.params.id)
+
+        // this.scroll = new BScroll(this.refs.wrapper,{
+        //     click:true,
+        //     pullUpLoad:true,
+        //     probeType:2
+        // });
+        // console.log(this.scroll)
        
-        this.props.getHomeDealListData(this.props.match.params.id);
+        
        
     }
-    
-    // shouldComponentUpdate(newprops,newstate){
-    // //     this.props.getHomeDealListData(this.props.match.params.id);
-    //   }
+    componentDidUpdate(){
+        if(this.flag){
+            this.props.getDealList(this.props.match.params.id)
+            this.props.match.params.flag=false;
+        }
+        this.flag=this.props.match.params.flag
+        
+     }
+   
     
 }
-  
-const mapStateToProps = (state)=>({
-    dealList:state.home.homeDealList
- })
+
+ const mapStateToProps = (state)=>({
+        dealList:state.home.homeDealList,
+        page:state.home.page
+
+  })
 
  const mapDispatchToProps = (dispatch)=>({
-    getHomeDealListData(id){
-       
+    getDealList(id){
         dispatch( dealList_action(id));
-    },
-    alert(){
-        console.log(11)
     }
-})
-export default connect(mapStateToProps,mapDispatchToProps)(HomeDealList)
+
+    
+   
+ })
+ export default connect(mapStateToProps,mapDispatchToProps)(HomeDealList)
