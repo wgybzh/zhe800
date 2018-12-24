@@ -10,7 +10,7 @@ export default class HomeSer extends Component{
              
                     <div className="ser_warp">
                         <div className="home_ser_800"> <img  src={login}/></div>
-                        <a href="#/" >
+                        <a href="#/search" >
                         <div className="home_ser_input">
                             <img src={ser_img}/>
                             搜索低价商品

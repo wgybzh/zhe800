@@ -15,9 +15,17 @@ import {
     flag_action
 } from "../../action/actionCreator"
 
+
  class Home extends Component{
+     constructor(){
+         super();
+         this.state={
+             showflag:false
+         }
+     }
    render(){
        let {navList,banList,flag} = this.props;
+       let {showflag} = this.state
        return(
            <Fragment>
                {flag?<HomeNav navList={navList}  flag={flag}/>:""} 
@@ -30,13 +38,14 @@ import {
                    {flag?"":<HomeNav navList={navList}  flag={flag}/>} 
                   <HomeBanner banList = {banList} />
 
-                   <Route path="/index/home/deal/:id/:flag" component={HomeDealList}/>
+                   <Route path="/index/home/deal/:id" component={HomeDealList}/>
                    
                        
                
                        
                    </div>
                    </div>
+                   <div className="gotop_con" style={{"display":showflag?"block":"none"}} onClick={this.gotop.bind(this)}></div>
                     
            </Fragment>
        )
@@ -47,7 +56,7 @@ import {
         click:true,
         pullUpLoad:true,
         probeType:2,
-        mouseWheel:false
+        //useTransition:false,
        
         
     });
@@ -60,20 +69,35 @@ import {
             }else{
                 this.props.handleToggle(2)
             }
-
-            console.log(offset.y)
+            if(offset.y <= -1200){
+                this.setState({
+                    showflag:true
+                })
+            }else{
+                this.setState({
+                    showflag:false
+                })
+            }
+           
         })
+       
+        
 }
 componentDidUpdate(){
     //重新计算高度
     this.scroll.refresh();
     //当数据加载完毕以后通知better-scroll可以进行下一次上拉加载
     this.scroll.finishPullUp();
+   
 }
-
-
+componentWillMount(){
+    window.addEventListener("scroll",this.gotop,true)
+}
+gotop(){
+    console.log(111)
   
 }
+ }
 
 const mapStateToProps = (state)=>({
     navList:state.home.homeNavList,

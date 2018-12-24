@@ -1,7 +1,7 @@
 const defaultState = {
     homeNavList:[],
     homeDealList:[],
-    page:0,
+    page:20,
     dealId:""
 }
 
@@ -10,7 +10,7 @@ export default (state=defaultState,action)=>{
     switch(action.type){
         case "DEALLIST_FULFILLED":
         let homeDealListState = JSON.parse(JSON.stringify(state));
-        homeDealListState.homeDealList = [...homeDealListState.homeDealList,...action.payload.objects];
+        homeDealListState.homeDealList = action.payload.objects;
         homeDealListState.dealId = action.payload.id;
         return homeDealListState;
 
