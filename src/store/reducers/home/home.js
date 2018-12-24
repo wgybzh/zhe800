@@ -19,6 +19,7 @@ export default (state=defaultState,action)=>{
         homeNavState.homeNavList = action.payload;
         return homeNavState;
 
+
         case "MOREDEALLIST_FULFILLED":
         let MoreHomeDealListState = JSON.parse(JSON.stringify(state));
         MoreHomeDealListState.homeDealList = [... MoreHomeDealListState.homeDealList,...action.payload.objects];
@@ -34,8 +35,6 @@ export default (state=defaultState,action)=>{
         }
         return flagState;
 
-       
-        default:
     }
     return state;
 }

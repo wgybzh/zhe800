@@ -10,9 +10,11 @@ import HomeDealList from "./children/homeDealList"
 import HomeBanner from "./children/homeBanner"
 import BScroll from "better-scroll";
 import {
+
     homeNav_action,
     moreHomeList_action,
     flag_action
+
 } from "../../action/actionCreator"
 
 
@@ -24,8 +26,10 @@ import {
          }
      }
    render(){
+
        let {navList,banList,flag} = this.props;
        let {showflag} = this.state
+
        return(
            <Fragment>
                {flag?<HomeNav navList={navList}  flag={flag}/>:""} 
@@ -35,18 +39,20 @@ import {
                       <img  src={home_header_logo}/>
                     </div>
                    <HomeSer/>
-                   {flag?"":<HomeNav navList={navList}  flag={flag}/>} 
+
+
+                   <HomeNav navList={navList} toList = {this.props.toList} />
+
                   <HomeBanner banList = {banList} />
 
                    <Route path="/index/home/deal/:id" component={HomeDealList}/>
                    
-                       
-               
-                       
+
                    </div>
                    </div>
                    <div className="gotop_con" style={{"display":showflag?"block":"none"}} onClick={this.gotop.bind(this)}></div>
                     
+
            </Fragment>
        )
    }
@@ -111,6 +117,7 @@ const mapDispatchToProps = (dispatch)=>({
     
     getHomeNavData(){
         dispatch(homeNav_action());
+
     },
    getMoreDealList(id,page){
        dispatch(moreHomeList_action(id,page))
@@ -118,6 +125,5 @@ const mapDispatchToProps = (dispatch)=>({
    handleToggle(val){
     dispatch(flag_action(val))
 }
-    
 })
 export default connect(mapStateToProps,mapDispatchToProps)(Home)

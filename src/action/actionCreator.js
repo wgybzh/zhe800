@@ -5,6 +5,7 @@ export const dealList_action = (id) =>({
    
     type:"DEALLIST",
     payload:new Promise(resolve=>{
+
             if(id){
                 let url =""
                 if(id==="tj"){
@@ -41,6 +42,7 @@ export const homeNav_action = () =>({
         .then(res=>res.json())
         .then((data)=>{
            resolve(data.brandTag[0].categories)
+
         })
     })
    

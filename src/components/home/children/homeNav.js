@@ -1,6 +1,7 @@
 import React,{Component} from "react";
 import {NavLink} from "react-router-dom"
 import "../css/style.css"
+
 import swiper from "swiper"
 
 
@@ -14,6 +15,8 @@ export default class HomeNav extends Component{
    render(){
        let {navList} = this.props;
        let {flag} = this.state;
+
+
        return(
            <nav className="home_nav">
             <div className="home_nav_cont">
@@ -29,8 +32,9 @@ export default class HomeNav extends Component{
                        <span>选择分类</span>
                    </p>
                </div> 
-             
+
                    <div className="swiper-container" ref="swiper_nav" style={{"display":flag?"block":"none"}}>
+
                         <div className="swiper-wrapper">
                         {
                             navList.length>0?navList.map((item,index)=>{
@@ -103,6 +107,7 @@ export default class HomeNav extends Component{
     })
    }
   
+
 go(){
     window.location.reload();
     this.setState({
@@ -111,3 +116,5 @@ go(){
 }
 }
  
+
+

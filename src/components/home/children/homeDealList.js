@@ -1,8 +1,6 @@
 import React,{Component} from "react"
+import {connect} from "react-redux";
 
-
-
-import {connect }from "react-redux"
 import {
     dealList_action,
 
@@ -16,9 +14,8 @@ import {
       
         let {dealList,} = this.props;
         return(
-            
-
             <div className="home_deal_box">
+
             <div className="home_deal_list">
             {
                 dealList.length>0?dealList.map((item,index)=>{
