@@ -7,7 +7,7 @@ import List from "../components/list/list";
 import My from "../components/my/my";
 class App extends Component {
   render() {
-    let flag = localStorage.getItem("flag")
+    let flag = sessionStorage.getItem("flag")
     return (
       <Provider store={store}>
      <Router>
@@ -41,10 +41,6 @@ class App extends Component {
                 </NavLink>
               </li>
               <li>
-
-
-               
-
                 <NavLink to={flag?"/car":"/mylogin/myLoginLetter"}>
 
                 <i className="iconfont">&#xe602;</i>

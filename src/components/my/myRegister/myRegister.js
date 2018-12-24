@@ -4,7 +4,7 @@ import {connect} from "react-redux"
 import {myPhoneAction,confirmAction} from "../../../action/my/myAction"
 class Register extends Component{
     render(){
-        let {phone,pwd,handlerPhone,confirmRegister} = this.props
+        let {phone,pwd,handlerPhone,confirmRegister,handlerInput} = this.props
       
         return (
             <Fragment>
@@ -20,7 +20,9 @@ class Register extends Component{
                         <input type="text" 
                         placeholder="手机号" 
                         value={phone}
+                        onBlur={handlerInput.bind(this)}
                         onChange={handlerPhone.bind(this,1)} />
+                        <em ref="info"></em>
                     </p>
                     <p>
                         <i className="iconfont">&#xe62a;</i>
@@ -46,11 +48,21 @@ const mapDispatchToProps = (dispatch)=>({
         var val = e.target.value
         dispatch(myPhoneAction(val,index))
     },
+    handlerInput(e){
+        var val = e.target.value;
+        var reg = /(15|17|18)\d{9}/
+        if(reg.test(val)){
+            this.refs.info.innerHTML="√"
+        }else{
+           this.refs.info.innerHTML="格式不正确"
+           console.log(this.refs.info)
+        }
+    },
     confirmRegister(){
        
         dispatch(confirmAction())
         console.log(this.props.flag)
-        //this.props.history.push("/mylogin/myLoginLetter")
+        this.props.history.push("/mylogin/myLoginLetter")
         
     }
 })

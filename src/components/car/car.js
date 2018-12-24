@@ -4,16 +4,15 @@ import {connect} from "react-redux"
 import Loadable from "react-loadable"
 import CarList from "./carList/nomin"
 import "../../common/css/cart/cart.css"
-import CarCom from "./carList/carCom" 
+import CarFooter from "./carList/carFooter"
  class Car extends Component{
    render(){
        let {list} = this.props
        console.log(this.props)
        return(
-
-           <div>
-                <CarCom/>
+           <div className="carWrap">
                 <CarList/>
+                <CarFooter/>
            </div>
 
        )
@@ -22,6 +21,7 @@ import CarCom from "./carList/carCom"
        console.log(this.props)
    }
    componentDidMount(){
+
    }
 } 
 const mapStateToProps = (state)=>({

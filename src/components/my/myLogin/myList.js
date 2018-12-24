@@ -29,9 +29,11 @@ export default class MyList extends Component{
                     </li>
                </ul>
                <div className="myListThree">
-                    <div className="myListOne"> <span>购物车</span> 
-                        <p>  <i className="fa fa-chevron-right"></i></p> 
-                    </div>
+                    <a href="#/car">
+                        <div className="myListOne"> <span>购物车</span> 
+                            <p>  <i className="fa fa-chevron-right"></i></p> 
+                        </div>
+                    </a>
                     <div className="myListOne"> <span>优惠券</span> 
                         <p>  <i className="fa fa-chevron-right"></i></p> 
                     </div>

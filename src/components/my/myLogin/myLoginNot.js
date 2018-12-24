@@ -6,7 +6,7 @@ import {connect} from "react-redux"
             <Fragment>
                 <p className="myBtn">
                     <a href="#/mylogin/myLoginLetter">登录</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-                    <a href="#/mylogin/myLoginLetter">注册</a>
+                    <a href="#/myregister">注册</a>
                 </p>
             </Fragment>
                             

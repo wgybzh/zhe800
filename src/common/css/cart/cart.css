@@ -8,6 +8,7 @@
     height: 1rem;
     background: #fcc
 }
+/* carCom */
 .carCom{
     width: 100%;
 
@@ -16,10 +17,41 @@
     width: 100%;
     background: #ccf;
     margin: .2rem 0;
+    display: flex;
+    justify-content: space-between
+}
+.carFooter{
+    width: 100%;
+    height: 1rem;
+    background: #cfc;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+.carWrap input{
+    font-size: 30px;
+    visibility: hidden;
+}
+.carWrap label{
+    display: inline-block;
+    background: #fff;
+    width: .4rem;
+     height:0.4rem;
+     border-radius: 50%;
+    position: relative;
+    text-align: center;
+    line-height: .4rem;
+    color: #fff;
+    border: 1px solid #ccc
+}
+.carWrap .carActive{
+    background: #c33
+}
+.carWrap label input{
+    font-size: 30px;
+    position: absolute;
 
 }
-
-
 
 /* 
  */

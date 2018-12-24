@@ -1,7 +1,7 @@
 
 const defaultState = {
-    phone:"aa",
-    pwd:"11",
+    phone:"",
+    pwd:"",
     flag:false,
     list:[]
 } 
@@ -11,15 +11,16 @@ export default (state = defaultState,action)=>{
 switch(action.type){
     case "MY_PHONE" :
         let phoneState = JSON.parse(JSON.stringify(state));
+        // eslint-disable-next-line default-case
         switch(action.index){
             case 1 :
                 phoneState.phone = action.value;
-                phoneState.flag = true
-                localStorage.setItem("flag",phoneState.flag)
+                sessionStorage.setItem("phone",phoneState.phone)
                 break
                // return phoneState
             case 2 :
                 phoneState.pwd = action.value;
+                sessionStorage.setItem("pwd",phoneState.pwd)
                 break
                // return phoneState
         }

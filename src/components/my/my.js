@@ -7,7 +7,7 @@ import {connect} from "react-redux"
  class My extends Component{
     render(){
        // let {flag} = this.props
-        let  flag = localStorage.getItem("flag")
+        let  flag = sessionStorage.getItem("flag")
        // console.log(flag)
         return (
             <div className="myWarp">

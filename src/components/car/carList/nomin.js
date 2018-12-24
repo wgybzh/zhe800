@@ -7,6 +7,7 @@ import {connect} from "react-redux"
 import Bscroll from "better-scroll"
 import CarSwiper from "./carSwiper"
 import CarNavBar from "./CarNavBar"
+import CarCom from "./carCom"
  class CarNomin extends Component{
      constructor(){
          super();
@@ -20,14 +21,17 @@ import CarNavBar from "./CarNavBar"
        //console.log(this.props)
        return(  
            <Fragment>
-            {flag?<CarNavBar/>:""}
+            {/*flag?<CarNavBar/>:""*/}
            <div className="wrapper" ref="wrapper">
+          
            <div className="home_deal_box">
             <div className="home_deal_list">
+            <CarCom/>
             {
                 lista.length>0?lista.map((item,index)=>{
                    
-                    return  item.brand?<a className="home_deal_item" key={index} onClick={this.handlerChange.bind(this)}>
+                    return  item.brand?<a className="home_deal_item" key={index} onClick={this.handlerChange.bind(this)}
+                    href={"https:"+item.brand.out_url}>
                        
                             <div className="goods_img">
                              <img src={item.image_url}></img>
@@ -37,11 +41,10 @@ import CarNavBar from "./CarNavBar"
                              <div className="title">{item.title}</div>
                              <div className="coupon">{item.brand.promotion_info}</div>
                          </div>
-                        
-                               
-                            </a>:
-                            
-                            <a className="home_deal_item" key={index}>
+                          
+                            </a>:    
+                            <a className="home_deal_item" key={index}
+                            href={item.deal.out_url}>
                         
                                 <div className="goods_img">
                                 <img src={item.image_url}></img>
